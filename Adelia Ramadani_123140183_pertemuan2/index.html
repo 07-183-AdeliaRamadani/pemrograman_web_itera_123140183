@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f2afc8" />
+    <meta
+      name="description"
+      content="Petal Desk, personal dashboard kuliah Adelia Ramadani. Praktikum PAW ITERA Pertemuan 2."
+    />
+    <title>Petal Desk · Dashboard Adelia</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script type="module" src="js/main.js"></script>
+  </head>
+  <body>
+    <div id="dashboard" class="app-shell">
+      <aside class="sidebar">
+        <a class="brand" href="index.html"
+          ><span aria-hidden="true">✿</span> petal desk<span
+            class="brand-period"
+            >.</span
+          ></a
+        >
+        <div class="sidebar-caption">YOUR LITTLE STUDY SPACE</div>
+        <nav class="side-nav" aria-label="Menu utama">
+          <button class="nav-item active" data-view="task" aria-current="page">
+            <span aria-hidden="true">▦</span> Dashboard
+            <span class="nav-dot"></span></button
+          ><button class="nav-item" data-view="note">
+            <span aria-hidden="true">▤</span> Catatan kecil
+            <span id="note-count" class="nav-count">0</span></button
+          ><a class="nav-item" href="modul/index.html"
+            ><span aria-hidden="true">⌘</span> Lab JavaScript
+            <span class="nav-arrow">↗</span></a
+          >
+        </nav>
+        <div class="sidebar-garden" aria-hidden="true">
+          <div class="flower-stem"></div>
+          <div class="flower">✿<span>•ᴗ•</span></div>
+          <p>grow at your<br />own pace.</p>
+          <span class="tiny-star">✧</span>
+        </div>
+        <div class="sidebar-bottom">
+          <div class="avatar">AR</div>
+          <div>
+            <strong>Adelia Ramadani</strong><small>123140183 · PAW RB</small>
+          </div>
+          <span aria-hidden="true">♡</span>
+        </div>
+      </aside>
+      <div class="main-shell">
+        <header class="topbar">
+          <div>
+            <span class="breadcrumb">My workspace</span
+            ><span class="breadcrumb-slash">/</span
+            ><strong id="breadcrumb-current">Dashboard</strong>
+          </div>
+          <div class="topbar-right">
+            <span class="local-badge"><i></i> Tersimpan di perangkat ini</span
+            ><span id="clock" class="clock"></span>
+          </div>
+        </header>
+        <main>
+          <section class="hero">
+            <div>
+              <div class="eyebrow" id="today-label">
+                SELAMAT DATANG DI MEJA BELAJARMU
+              </div>
+              <h1>
+                Halo, Adelia <span class="wave" aria-hidden="true">✧</span
+                ><br /><span class="hero-second"
+                  >A little progress, every day.</span
+                >
+              </h1>
+              <p>Rapikan tugas, simpan ide, dan beri ruang untuk istirahat.</p>
+            </div>
+            <button class="button primary hero-button" id="add-item">
+              <span>＋</span> Tambah tugas
+            </button>
+          </section>
+          <section class="stats-grid" aria-label="Ringkasan tugas">
+            <article class="stat-card">
+              <div>
+                <span class="stat-caption">MASIH DALAM PROSES</span
+                ><strong id="stat-active">0<span>tugas aktif</span></strong>
+                <p>Satu per satu, kamu pasti bisa.</p>
+              </div>
+              <span class="stat-icon" aria-hidden="true">↗</span>
+            </article>
+            <article class="stat-card pink-card">
+              <div>
+                <span class="stat-caption">LITTLE WINS</span
+                ><strong id="stat-done">0<span>tugas selesai</span></strong>
+                <p>Setiap langkah kecil berarti ♡</p>
+              </div>
+              <span class="stat-icon" aria-hidden="true">✓</span>
+            </article>
+            <article class="stat-card">
+              <div>
+                <span class="stat-caption">PERLU PERHATIAN</span
+                ><strong id="stat-due">0<span>tenggat terdekat</span></strong>
+                <p>Hari ini & tugas yang terlambat.</p>
+              </div>
+              <span class="stat-icon" aria-hidden="true">◷</span>
+            </article>
+          </section>
+          <div class="content-grid">
+            <section class="workspace-column">
+              <article class="panel list-panel">
+                <div class="panel-heading">
+                  <div>
+                    <span class="eyebrow"
+                      >LET'S MAKE ROOM FOR WHAT MATTERS</span
+                    >
+                    <h2 id="list-title">
+                      Daftar tugasmu<span class="pink">.</span>
+                    </h2>
+                  </div>
+                  <span class="pill" id="result-count">0 tugas</span>
+                </div>
+                <div class="list-toolbar">
+                  <div
+                    class="filter-tabs"
+                    role="group"
+                    aria-label="Status tugas"
+                  >
+                    <button
+                      data-status="all"
+                      class="selected"
+                      aria-pressed="true"
+                    >
+                      Semua</button
+                    ><button data-status="active" aria-pressed="false">
+                      Aktif</button
+                    ><button data-status="done" aria-pressed="false">
+                      Selesai
+                    </button>
+                  </div>
+                  <label class="search-field"
+                    ><span class="sr-only">Cari tugas atau catatan</span
+                    ><span aria-hidden="true">⌕</span
+                    ><input
+                      type="search"
+                      id="search"
+                      placeholder="Cari sesuatu…"
+                      autocomplete="off"
+                  /></label>
+                </div>
+                <div class="secondary-filters">
+                  <label
+                    >Prioritas
+                    <select id="priority-filter">
+                      <option value="all">Semua prioritas</option>
+                      <option value="high">Tinggi</option>
+                      <option value="medium">Sedang</option>
+                      <option value="low">Rendah</option>
+                    </select></label
+                  ><label
+                    >Urutkan
+                    <select id="sort">
+                      <option value="date">Tenggat terdekat</option>
+                      <option value="name">Nama A–Z</option>
+                    </select></label
+                  >
+                </div>
+                <div id="item-list" class="item-list" aria-live="polite"></div>
+                <div class="list-footer">
+                  <span id="list-footer-text"
+                    >Data awal berupa contoh dan dapat diubah.</span
+                  ><span>made for your kind of busy ♡</span>
+                </div>
+              </article>
+              <section class="notes-preview">
+                <div class="mini-heading">
+                  <h2>Catatan kecil <span class="pink">✧</span></h2>
+                  <button class="text-button" id="add-note">
+                    ＋ Tulis catatan
+                  </button>
+                </div>
+                <div id="note-preview-list" class="note-grid"></div>
+              </section>
+            </section>
+            <aside class="widgets">
+              <article class="weather-card">
+                <div class="widget-heading">
+                  <span class="eyebrow">DI SEKITAR KAMPUS</span
+                  ><button
+                    id="refresh-weather"
+                    class="icon-button"
+                    aria-label="Muat ulang cuaca"
+                  >
+                    ↻
+                  </button>
+                </div>
+                <div class="weather-main">
+                  <div>
+                    <strong id="weather-temp">—<span>°C</span></strong>
+                    <p id="weather-description">Memuat cuaca…</p>
+                  </div>
+                  <span
+                    id="weather-icon"
+                    class="weather-icon"
+                    aria-hidden="true"
+                    >☁</span
+                  >
+                </div>
+                <p class="weather-location">⌖ Lampung Selatan · ITERA</p>
+                <p id="weather-status" class="weather-status" role="status">
+                  Data Open-Meteo
+                </p>
+              </article>
+              <article class="panel focus-card">
+                <span class="eyebrow">A MOMENT TO FOCUS</span>
+                <h2>Waktunya fokus.</h2>
+                <p>25 menit untuk satu hal kecil.</p>
+                <div class="timer-art">
+                  <span class="timer-flower" aria-hidden="true">✿</span
+                  ><strong id="timer">25:00</strong
+                  ><span>LET YOUR IDEAS BLOOM</span>
+                </div>
+                <div class="timer-actions">
+                  <button class="button primary" id="timer-toggle">
+                    Mulai fokus <span>▷</span></button
+                  ><button
+                    class="button secondary"
+                    id="timer-reset"
+                    aria-label="Reset timer"
+                  >
+                    ↻
+                  </button>
+                </div>
+                <p id="timer-status" class="timer-status" aria-live="polite">
+                  Siapkan air minum, lalu mulai.
+                </p>
+              </article>
+              <article class="progress-card">
+                <div>
+                  <span class="eyebrow">YOUR PROGRESS</span
+                  ><strong id="progress-number">0%</strong>
+                </div>
+                <div
+                  class="progress-track"
+                  role="progressbar"
+                  aria-label="Persentase tugas selesai"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuenow="0"
+                  id="progress"
+                >
+                  <div id="progress-fill"></div>
+                </div>
+                <p id="progress-caption">
+                  Belum ada tugas. Mulai dari satu langkah kecil.
+                </p>
+              </article>
+            </aside>
+          </div>
+          <div id="storage-warning" class="warning" role="alert" hidden></div>
+          <footer>
+            <span
+              >✿ Petal Desk · Dibuat dengan hati oleh
+              <strong>Adelia Ramadani</strong></span
+            ><span>Praktikum PAW ITERA · Pertemuan 02</span>
+          </footer>
+        </main>
+      </div>
+    </div>
+    <dialog id="item-dialog">
+      <form id="item-form" novalidate>
+        <div class="dialog-header">
+          <div>
+            <span class="eyebrow">A LITTLE SPACE FOR YOUR PLANS</span>
+            <h2 id="dialog-title">Tambah tugas baru</h2>
+          </div>
+          <button
+            type="button"
+            class="icon-button"
+            id="close-dialog"
+            aria-label="Tutup form"
+          >
+            ×
+          </button>
+        </div>
+        <input type="hidden" id="item-id" />
+        <div class="form-row">
+          <div class="field">
+            <label for="item-type">Jenis informasi</label
+            ><select id="item-type">
+              <option value="task">Tugas kuliah</option>
+              <option value="note">Catatan kecil</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="item-priority">Prioritas</label
+            ><select id="item-priority">
+              <option value="medium">Sedang</option>
+              <option value="high">Tinggi</option>
+              <option value="low">Rendah</option></select
+            ><small class="error" id="priority-error"></small>
+          </div>
+        </div>
+        <div class="field">
+          <label for="item-title">Judul <span class="required">*</span></label
+          ><input
+            id="item-title"
+            maxlength="100"
+            placeholder="Apa yang ingin kamu selesaikan?"
+            aria-describedby="title-error"
+            required
+          /><small class="error" id="title-error"></small>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="item-subject">Mata kuliah / label</label
+            ><input
+              id="item-subject"
+              maxlength="60"
+              placeholder="Contoh: PAW"
+            /><small class="error" id="subject-error"></small>
+          </div>
+          <div class="field">
+            <label for="item-date"
+              >Tenggat <span class="optional">(opsional)</span></label
+            ><input
+              id="item-date"
+              type="date"
+              min="2000-01-01"
+              max="2100-12-31"
+              aria-describedby="date-error"
+            /><small class="error" id="date-error"></small>
+          </div>
+        </div>
+        <div class="field">
+          <label for="item-body">Catatan tambahan</label
+          ><textarea
+            id="item-body"
+            rows="3"
+            maxlength="1500"
+            placeholder="Detail kecil yang tidak ingin kamu lupa…"
+          ></textarea
+          ><small class="error" id="body-error"></small>
+        </div>
+        <p class="error" id="form-error" role="alert"></p>
+        <div class="dialog-footer">
+          <span>♡ Disimpan otomatis di browser.</span
+          ><button type="submit" class="button primary">
+            Simpan <span>↗</span>
+          </button>
+        </div>
+      </form>
+    </dialog>
+    <dialog id="delete-dialog">
+      <h2>Hapus informasi ini?</h2>
+      <p id="delete-description"></p>
+      <div class="dialog-actions">
+        <button id="cancel-delete" class="button secondary">Batal</button
+        ><button id="confirm-delete" class="button primary">Ya, hapus</button>
+      </div>
+    </dialog>
+    <div id="toast" class="toast" role="status"></div>
+    <noscript
+      ><p class="warning">
+        Aktifkan JavaScript untuk menggunakan dashboard.
+      </p></noscript
+    >
+  </body>
+</html>

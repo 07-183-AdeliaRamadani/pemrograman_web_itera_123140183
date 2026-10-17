@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lab ES6+ · Adelia Ramadani</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <script type="module" src="../js/main.js"></script>
+  </head>
+  <body class="lab-page">
+    <header class="lab-header">
+      <a class="brand" href="../index.html"><span>✿</span> petal desk.</a
+      ><a href="../index.html">← Kembali ke dashboard</a>
+    </header>
+    <main>
+      <section class="lab-intro">
+        <div class="eyebrow">PRAKTIKUM PAW ITERA / PERTEMUAN 02</div>
+        <h1>Little JavaScript lab<span class="pink">.</span></h1>
+        <p>
+          Adelia Ramadani · 123140183 · Kelas RB<br />Jalankan seluruh demo
+          JavaScript Modern (ES6+), dari variabel sampai async/await. Error
+          latihan ditangani agar halaman tetap dapat digunakan.
+        </p>
+      </section>
+      <div class="lab-actions">
+        <button id="runBtn" class="button primary">▷ Run Demo</button
+        ><button id="clearBtn" class="button secondary">Clear Output</button
+        ><span id="demo-status" class="lab-status" role="status"
+          >12 demo siap dicoba.</span
+        >
+      </div>
+      <div id="output" class="output-grid"></div>
+      <section class="panel lab-live">
+        <div class="eyebrow">TEMPLATE LITERALS / HTML DINAMIS</div>
+        <h2>Dari string menjadi kartu profil.</h2>
+        <p>
+          Demo nomor 3 memperlihatkan cara lama dengan <code>+</code>,
+          interpolasi <code>${...}</code>, string multi-baris, ekspresi, dan
+          tagged template. Tombol di bawah merender template identitas yang sama
+          menjadi HTML.
+        </p>
+        <button id="render-template" class="button primary">
+          Render template HTML
+        </button>
+        <div
+          id="template-preview"
+          class="result"
+          style="margin-top: 18px"
+        ></div>
+      </section>
+      <section class="panel lab-live">
+        <div class="eyebrow">LATIHAN ASYNC / MULTI-ENDPOINT</div>
+        <h2>Dua request, berjalan bersama.</h2>
+        <p>
+          Ambil profil contoh dan daftar post miliknya menggunakan
+          <code>Promise.all</code> + <code>async/await</code>. Loading, timeout,
+          retry dengan exponential backoff, dan error ditangani di modul
+          network.
+        </p>
+        <button id="fetch-bundle" class="button primary">
+          Ambil dua endpoint
+        </button>
+        <pre id="bundle-output" class="result" role="status">
+Belum ada request. Memerlukan koneksi internet.</pre>
+      </section>
+      <section class="panel lab-live">
+        <div class="eyebrow">LATIHAN ASYNC / PAGINATION & DEBOUNCED SEARCH</div>
+        <h2>Temukan post yang kamu cari.</h2>
+        <p>
+          Data riil dari JSONPlaceholder. Pencarian judul menunggu 400 ms
+          setelah Anda berhenti mengetik; request sebelumnya dibatalkan agar
+          hasil lama tidak menimpa pencarian terbaru. Lima post per halaman.
+        </p>
+        <div class="lab-fields">
+          <div class="field">
+            <label for="post-search">Cari judul</label
+            ><input
+              id="post-search"
+              type="search"
+              placeholder="Contoh: qui"
+              autocomplete="off"
+            />
+          </div>
+          <button
+            id="fetch-posts"
+            class="button primary"
+            style="margin-bottom: 15px"
+          >
+            Ambil post
+          </button>
+        </div>
+        <p id="posts-status" class="lab-status" role="status">
+          Belum ada data.
+        </p>
+        <div id="posts-output"></div>
+        <div class="lab-actions">
+          <button id="post-prev" class="button secondary" disabled>
+            Previous</button
+          ><button id="post-next" class="button secondary" disabled>
+            Next
+          </button>
+        </div>
+      </section>
+      <footer>
+        Adelia Ramadani · 123140183 · RB · Praktikum JavaScript Next Gen ITERA
+      </footer>
+    </main>
+  </body>
+</html>

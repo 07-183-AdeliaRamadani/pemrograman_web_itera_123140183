@@ -1,0 +1,133 @@
+.book-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.book-item {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  padding: 20px 0;
+  border-top: 1px solid var(--line);
+}
+.book-cover {
+  width: 66px;
+  min-width: 66px;
+  height: 90px;
+  border: 1px solid var(--ink);
+  border-left: 5px solid var(--ink);
+  border-radius: 3px 7px 7px 3px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 7px;
+  background: var(--pink);
+}
+.book-cover small {
+  font-size: 8px;
+  align-self: start;
+}
+.book-cover > span {
+  font-size: 29px;
+}
+.book-cover i {
+  font-size: 7px;
+  font-style: normal;
+  letter-spacing: 1px;
+}
+.cover-milik {
+  background: #fce5ee;
+}
+.cover-beli {
+  background: var(--ink);
+  color: white;
+}
+.cover-baca {
+  background: var(--pink);
+}
+.book-info {
+  flex: 1;
+  min-width: 0;
+}
+.book-info h3 {
+  font-size: 16px;
+  margin: 8px 0 4px;
+  overflow-wrap: anywhere;
+}
+.book-info p {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.badge {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  padding: 4px 8px;
+  border-radius: 5px;
+  display: inline-block;
+  background: #f5f1f3;
+}
+.badge-baca {
+  background: #fbe0eb;
+  color: #8b2851;
+}
+.badge-beli {
+  background: var(--ink);
+  color: white;
+}
+.book-actions {
+  display: flex;
+  gap: 5px;
+}
+.book-actions button {
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  padding: 7px 10px;
+  background: white;
+  font-size: 12px;
+}
+.book-actions .delete {
+  color: #a51f50;
+}
+.empty {
+  text-align: center;
+  padding: 45px 20px;
+  border: 1px dashed #deccd4;
+  border-radius: 12px;
+  background: var(--paper);
+}
+.empty > span {
+  font-size: 42px;
+  color: var(--rose);
+}
+.empty h3 {
+  font-size: 16px;
+  margin: 12px 0;
+}
+.empty p {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+@media (max-width: 600px) {
+  .book-item {
+    gap: 12px;
+  }
+  .book-actions {
+    flex-direction: column;
+  }
+  .book-actions button {
+    font-size: 11px;
+  }
+  .book-info h3 {
+    font-size: 14px;
+  }
+  .book-cover {
+    min-width: 53px;
+    width: 53px;
+    height: 80px;
+  }
+}

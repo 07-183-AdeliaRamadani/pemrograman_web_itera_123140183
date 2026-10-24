@@ -1,0 +1,52 @@
+.form-card {
+  padding: 26px;
+}
+.field {
+  margin-bottom: 18px;
+}
+.field label {
+  display: block;
+  margin-bottom: 9px;
+  font-size: 12px;
+  font-weight: 700;
+}
+.required {
+  color: var(--rose);
+}
+input,
+select {
+  width: 100%;
+  padding: 13px 12px;
+  border: 1px solid #ded5da;
+  border-radius: 9px;
+  background: white;
+  color: var(--ink);
+  font: inherit;
+  font-size: 13px;
+  min-width: 0;
+}
+input::placeholder {
+  color: #8b7e85;
+}
+input[aria-invalid="true"],
+select[aria-invalid="true"] {
+  border: 2px solid #a51f50;
+}
+.error {
+  display: block;
+  color: #a51f50;
+  font-size: 11px;
+  margin-top: 5px;
+}
+.error:empty {
+  display: none;
+}
+.hint {
+  font-size: 11px;
+  text-align: center;
+  color: var(--muted);
+  margin: 18px 0 0;
+}
+.cancel {
+  margin-top: 10px;
+}

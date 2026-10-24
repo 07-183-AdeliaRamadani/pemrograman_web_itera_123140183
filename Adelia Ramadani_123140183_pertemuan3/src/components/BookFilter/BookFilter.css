@@ -1,0 +1,41 @@
+.filter-area {
+  margin: 22px 0;
+}
+.search-box {
+  position: relative;
+}
+.search-box > span {
+  position: absolute;
+  left: 14px;
+  top: 6px;
+  font-size: 26px;
+  color: var(--muted);
+}
+.search-box input {
+  padding-left: 42px;
+  background: var(--paper);
+}
+.filter-tabs {
+  display: flex;
+  gap: 8px;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+.filter-tabs button {
+  border: 1px solid var(--line);
+  background: white;
+  border-radius: 8px;
+  padding: 9px 11px;
+  font-size: 11px;
+  color: var(--muted);
+}
+.filter-tabs button[aria-pressed="true"] {
+  background: var(--ink);
+  color: white;
+  border-color: var(--ink);
+}
+.filter-tabs button span {
+  margin-left: 8px;
+  opacity: 0.8;
+  font-size: 10px;
+}

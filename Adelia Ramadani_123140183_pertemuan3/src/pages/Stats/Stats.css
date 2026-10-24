@@ -1,0 +1,41 @@
+.stats-detail {
+  padding: 32px;
+  max-width: 800px;
+  margin: 0 auto 30px;
+}
+.stats-detail > p:not(.eyebrow) {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+.distribution {
+  margin: 25px 0;
+}
+.distribution > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+progress {
+  width: 100%;
+  height: 12px;
+  border: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--pale);
+  accent-color: var(--rose);
+}
+progress::-webkit-progress-bar {
+  background: var(--pale);
+}
+progress::-webkit-progress-value {
+  background: var(--rose);
+}
+progress::-moz-progress-bar {
+  background: var(--rose);
+}
+.stats-detail .button {
+  margin-top: 24px;
+}

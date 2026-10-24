@@ -1,0 +1,24 @@
+
+ RUN  v3.2.7 C:/Users/user/Downloads/Adelia_123140183_Pertemuan1/Adelia Ramadani_123140183_pertemuan3
+
+ ✓ src/hooks/hooks.test.jsx > useBookStats menghitung semua status dan penulis unik 21ms
+ ✓ src/hooks/hooks.test.jsx > statistik koleksi kosong tidak menghasilkan angka invalid 3ms
+ ✓ src/hooks/hooks.test.jsx > data rusak {rusak ditangani tanpa menimpa data asli 3ms
+ ✓ src/hooks/hooks.test.jsx > data rusak {} ditangani tanpa menimpa data asli 4ms
+ ✓ src/hooks/hooks.test.jsx > data rusak [{"id":"1"}] ditangani tanpa menimpa data asli 3ms
+ ✓ src/hooks/hooks.test.jsx > gagal menyimpan memberikan peringatan tetapi state tetap dapat diubah 7ms
+ ✓ src/components/BookForm/BookForm.test.jsx > menolak input kosong dan memberi feedback visual 185ms
+ ✓ src/components/BookForm/BookForm.test.jsx > mengirim judul, penulis, status lalu mengosongkan form 241ms
+ ✓ src/components/BookForm/BookForm.test.jsx > memuat buku untuk diedit dan menyertakan id saat disimpan 72ms
+ ✓ src/App.test.jsx > pencarian judul dan penulis tidak peka huruf besar kecil 347ms
+ ✓ src/App.test.jsx > menggabungkan filter status dan kata pencarian 155ms
+ ✓ src/App.test.jsx > membatalkan hapus mempertahankan buku; konfirmasi menghapus dan menyimpan 198ms
+ ✓ src/App.test.jsx > mengedit judul dan status buku melalui Context API 205ms
+ ✓ src/App.test.jsx > data tambah buku bertahan setelah unmount dan mount kembali 190ms
+ ✓ src/App.test.jsx > navigasi statistik memakai data global dan halaman tentang menampilkan identitas 72ms
+ ✓ src/App.test.jsx > menampilkan 404 untuk URL tidak dikenal 9ms
+
+ Test Files  3 passed (3)
+      Tests  16 passed (16)
+   Start at  22:20:52
+   Duration  5.71s (transform 335ms, setup 2.29s, collect 1.22s, tests 1.72s, environment 6.75s, prepare 886ms)

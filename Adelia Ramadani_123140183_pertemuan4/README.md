@@ -71,8 +71,6 @@ Gambar berikut merangkum keluaran aktual dari ketiga skrip dan pengujian unit. P
 
 ![Hasil 11 unit test](screenshots/04-unit-test.png)
 
-[Versi HTML keluaran terminal](docs/hasil-eksekusi.html) juga tersedia sebagai dokumentasi teks.
-
 ## Struktur folder
 
 ```text
